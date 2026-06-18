@@ -4,6 +4,7 @@
 # State files - contain sensitive data!
 terraform.tfstate
 terraform.tfstate.backup
+.terraform.tfstate.lock.info
 .terraform.lock.hcl
 
 # Variable files that may contain secrets

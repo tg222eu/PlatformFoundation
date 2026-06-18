@@ -1,6 +1,10 @@
 terraform {
-  # Will be filled later
-  #backend "azurerm" {}
+  backend "azurerm" {
+  resource_group_name  = "rg-terraform-state"
+  storage_account_name = "stterraformstate9482"
+  container_name       = "tfstate"
+  key                  = "landing-zone.tfstate"
+}
 }
 
 provider "azurerm" {
