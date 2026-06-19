@@ -1,3 +1,5 @@
+#<resource>-<Project name>-<env>
+
 variable "location" {
     description = "Azure region"
     type        = string
@@ -7,23 +9,29 @@ variable "location" {
 variable "networking_resource_group_name"{
     description = "Networking resource group"
     type        = string
-    default     = "rg-networking"
+    default     = "rg-platform-dev"
 }
 
-variable "app_subnet_group_name"{
+variable "Virtual_Network_name"{
     description = "App subnet"
     type        = string
-    default     = "snet-app"
+    default     = "vnet-platform-dev"
 }
 
-variable "Data_subnet_group_name"{
+variable "App_subnet_name"{
+    description = "App subnet"
+    type        = string
+    default     = "snetapp-platform-dev"
+}
+
+variable "Data_subnet_name"{
     description = "Data subnet"
     type        = string
-    default     = "snet-data"
+    default     = "snetdata-platform-dev"
 }
 
-variable "Management_subnet_group_name"{
+variable "Management_subnet_name"{
     description = "Management subnet"
     type        = string
-    default     = "snet-mgmt"
+    default     = "snetmgmt-platform-dev"
 }
