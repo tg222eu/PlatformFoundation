@@ -12,26 +12,44 @@ variable "networking_resource_group_name"{
     default     = "rg-platform-dev"
 }
 
-variable "Virtual_Network_name"{
+variable "virtual_network_name"{
     description = "App subnet"
     type        = string
     default     = "vnet-platform-dev"
 }
 
-variable "App_subnet_name"{
-    description = "App subnet"
+variable "app_subnet_name"{
+    description = "App subnet name"
     type        = string
     default     = "snet-app-platform-dev"
 }
 
-variable "Data_subnet_name"{
-    description = "Data subnet"
+variable "data_subnet_name"{
+    description = "Data subnet name"
     type        = string
     default     = "snet-data-platform-dev"
 }
 
-variable "Management_subnet_name"{
-    description = "Management subnet"
+variable "management_subnet_name"{
+    description = "Management subnet name"
     type        = string
     default     = "snet-mgmt-platform-dev"
+}
+
+variable "app_subnet_address_prefix"{
+    description = "App subnet address prefix"
+    type        = string
+    default     = "10.0.1.0/24"
+}
+
+variable "data_subnet_address_prefix"{
+    description = "Data subnet address prefix"
+    type        = string
+    default     = "10.0.2.0/24"
+}
+
+variable "management_subnet_address_prefix"{
+    description = "Management address prefix"
+    type        = string
+    default     = "10.0.3.0/24"
 }
