@@ -21,7 +21,7 @@ resource "azurerm_virtual_network" "hub" {
 
 resource "azurerm_subnet" "app" {
   name                  = var.app_subnet_name
-  virtual_network_name  = var.virtual_network_name
+  virtual_network_name  = azurerm_virtual_network.hub.name
   resource_group_name   = azurerm_resource_group.platform.name
   address_prefixes      = [var.app_subnet_address_prefix]
   depends_on            = [azurerm_virtual_network.hub]
@@ -29,7 +29,7 @@ resource "azurerm_subnet" "app" {
 
 resource "azurerm_subnet" "data" {
   name                  = var.data_subnet_name
-  virtual_network_name  = var.virtual_network_name
+  virtual_network_name  = azurerm_virtual_network.hub.name
   resource_group_name   = azurerm_resource_group.platform.name
   address_prefixes      = [var.data_subnet_address_prefix]
   depends_on            = [azurerm_virtual_network.hub]
@@ -37,7 +37,7 @@ resource "azurerm_subnet" "data" {
 
 resource "azurerm_subnet" "mgmt" {
   name                  = var.management_subnet_name
-  virtual_network_name  = var.virtual_network_name
+  virtual_network_name  = azurerm_virtual_network.hub.name
   resource_group_name   = azurerm_resource_group.platform.name
   address_prefixes      = [var.management_subnet_address_prefix]
   depends_on            = [azurerm_virtual_network.hub]
