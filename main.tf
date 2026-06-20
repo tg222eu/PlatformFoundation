@@ -61,3 +61,13 @@ resource "azurerm_subnet_network_security_group_association" "app" {
   subnet_id                 = azurerm_subnet.app.id
   network_security_group_id = azurerm_network_security_group.app.id
 }
+
+resource "azurerm_subnet_network_security_group_association" "data" {
+  subnet_id                 = azurerm_subnet.data.id
+  network_security_group_id = azurerm_network_security_group.data.id
+}
+
+resource "azurerm_subnet_network_security_group_association" "mgmt" {
+  subnet_id                 = azurerm_subnet.mgmt.id
+  network_security_group_id = azurerm_network_security_group.mgmt.id
+}
