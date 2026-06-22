@@ -101,3 +101,12 @@ variable "cost_center" {
     type        = string
     default     = "IT-Platform"
 }
+
+# ==========================
+# SECURITY RULES VARIABLES
+# ==========================
+
+variable "my_public_ip" {
+  description = "My public IP"
+  type        = string
+}
