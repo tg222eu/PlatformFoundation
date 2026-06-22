@@ -60,7 +60,7 @@ resource "azurerm_subnet" "mgmt" {
 resource "azurerm_network_security_group" "app" {
   name                  = var.app_nsg_name
   location              = var.location
-  resource_group_name   = var.platform_resource_group_name
+  resource_group_name   = azurerm_resource_group.platform.name
   depends_on            = [azurerm_virtual_network.hub]
   tags                  = local.common_tags
 }
@@ -68,7 +68,7 @@ resource "azurerm_network_security_group" "app" {
 resource "azurerm_network_security_group" "data" {
   name                  = var.data_nsg_name
   location              = var.location
-  resource_group_name   = var.platform_resource_group_name
+  resource_group_name   = azurerm_resource_group.platform.name
   depends_on            = [azurerm_virtual_network.hub]
   tags                  = local.common_tags
 }
@@ -76,7 +76,7 @@ resource "azurerm_network_security_group" "data" {
 resource "azurerm_network_security_group" "mgmt" {
   name                  = var.mgmt_nsg_name
   location              = var.location
-  resource_group_name   = var.platform_resource_group_name
+  resource_group_name   = azurerm_resource_group.platform.name
   depends_on            = [azurerm_virtual_network.hub]
   tags                  = local.common_tags
 }
