@@ -127,3 +127,13 @@ variable "secret_value" {
   type        = string
   # Key value stored locally
 }
+
+# ==========================
+# LOG STORAGE
+# ==========================
+
+variable "storage_account_log_name" {
+    description = "Name of log storage accoount"
+    type        = string
+    # Name stored locally
+}

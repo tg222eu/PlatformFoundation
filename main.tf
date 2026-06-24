@@ -72,3 +72,17 @@ resource "azurerm_key_vault_secret" "test" {
   key_vault_id  = azurerm_key_vault.main.id
   tags          = local.common_tags
 }
+
+# ==========================================
+# Analytics & Logs - Storage
+# ==========================================
+
+resource "azurerm_storage_account" "logs" {
+  name                        = var.storage_account_log_name
+  resource_group_name         = azurerm_resource_group.platform.name
+  location                    = var.location
+  account_tier                = "Standard"
+  account_replication_type    = "LRS"
+  account_kind                = "StorageV2"
+  https_traffic_only_enabled  = true
+}
