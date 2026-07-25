@@ -12,6 +12,7 @@ terraform {
 }
 
 data "azurerm_client_config" "current_user" {}
+data "azuread_service_principal" "github_oidc" { client_id = "c55e44ef-dddd-4bae-ba0f-edf101ba2363" }
 
 resource "azurerm_resource_group" "main" {
   name      = "${local.naming_prefix}-resource-group"
@@ -95,6 +96,12 @@ resource "azurerm_role_assignment" "resource_group_reader" {
   scope                 = azurerm_resource_group.main.id
   role_definition_name  = "Reader"
   principal_id          = azuread_group.readers.object_id
+}
+
+resource "azurerm_role_assignment" "resource_group_contributer" {
+  scope = azurerm_resource_group.main.id
+  role_definition_name = "Contributer"
+  principal_id = data.azuread_service_principal.github_oidc.object_id
 }
 
 # =============================================================================
