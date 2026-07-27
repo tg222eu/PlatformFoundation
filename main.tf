@@ -98,9 +98,9 @@ resource "azurerm_role_assignment" "resource_group_reader" {
   principal_id          = azuread_group.readers.object_id
 }
 
-resource "azurerm_role_assignment" "resource_group_contributer" {
+resource "azurerm_role_assignment" "resource_group_contributor" {
   scope = azurerm_resource_group.main.id
-  role_definition_name = "Contributer"
+  role_definition_name = "Contributor"
   principal_id = data.azuread_service_principal.github_oidc.object_id
 }
 
