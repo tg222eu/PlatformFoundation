@@ -7,24 +7,24 @@
 # =============================================================================
 
 resource "azurerm_network_security_group" "app" {
-  name                  = "${local.naming_prefix}-nsg-app"
-  location              = var.location
-  resource_group_name   = azurerm_resource_group.main.name
-  tags                  = local.common_tags
+  name                = "${local.naming_prefix}-nsg-app"
+  location            = var.location
+  resource_group_name = azurerm_resource_group.main.name
+  tags                = local.common_tags
 }
 
 resource "azurerm_network_security_group" "data" {
-  name                  = "${local.naming_prefix}-nsg-data"
-  location              = var.location
-  resource_group_name   = azurerm_resource_group.main.name
-  tags                  = local.common_tags
+  name                = "${local.naming_prefix}-nsg-data"
+  location            = var.location
+  resource_group_name = azurerm_resource_group.main.name
+  tags                = local.common_tags
 }
 
 resource "azurerm_network_security_group" "mgmt" {
-  name                  = "${local.naming_prefix}-nsg-mgmt"
-  location              = var.location
-  resource_group_name   = azurerm_resource_group.main.name
-  tags                  = local.common_tags
+  name                = "${local.naming_prefix}-nsg-mgmt"
+  location            = var.location
+  resource_group_name = azurerm_resource_group.main.name
+  tags                = local.common_tags
 }
 
 # =============================================================================
@@ -32,18 +32,18 @@ resource "azurerm_network_security_group" "mgmt" {
 # =============================================================================
 
 resource "azurerm_subnet_network_security_group_association" "app" {
-  subnet_id                   = azurerm_subnet.app.id
-  network_security_group_id   = azurerm_network_security_group.app.id
+  subnet_id                 = azurerm_subnet.app.id
+  network_security_group_id = azurerm_network_security_group.app.id
 }
 
 resource "azurerm_subnet_network_security_group_association" "data" {
-  subnet_id                   = azurerm_subnet.data.id
-  network_security_group_id   = azurerm_network_security_group.data.id
+  subnet_id                 = azurerm_subnet.data.id
+  network_security_group_id = azurerm_network_security_group.data.id
 }
 
 resource "azurerm_subnet_network_security_group_association" "mgmt" {
-  subnet_id                   = azurerm_subnet.mgmt.id
-  network_security_group_id   = azurerm_network_security_group.mgmt.id
+  subnet_id                 = azurerm_subnet.mgmt.id
+  network_security_group_id = azurerm_network_security_group.mgmt.id
 }
 
 # =============================================================================

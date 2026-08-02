@@ -3,36 +3,36 @@
 # =============================================================================
 
 variable "location" {
-    description = "Azure region"
-    type        = string
-    default     = "Sweden Central"
+  description = "Azure region"
+  type        = string
+  default     = "Sweden Central"
 }
 
 # =============================================================================
 # TAGS
 # =============================================================================
 variable "environment_name" {
-    description = "Environment name (dev, test, prod)"
-    type        = string
-    default     = "dev"
+  description = "Environment name (dev, test, prod)"
+  type        = string
+  default     = "dev"
 }
 
 variable "project_name" {
-    description = "Project name"
-    type        = string
-    default     = "platform"
+  description = "Project name"
+  type        = string
+  default     = "platform"
 }
 
 variable "owner_name" {
-    description = "Owner name"
-    type        = string
-    default     = "Thorvald"
+  description = "Owner name"
+  type        = string
+  default     = "Thorvald"
 }
 
 variable "cost_center" {
-    description = "Cost center for billing"
-    type        = string
-    default     = "IT-Platform"
+  description = "Cost center for billing"
+  type        = string
+  default     = "IT-Platform"
 }
 
 # =============================================================================
@@ -40,9 +40,9 @@ variable "cost_center" {
 # =============================================================================
 
 variable "alert_email" {
-    description = "Email which alerts are sent to"
-    type = string
-    default = "example@example.com"
+  description = "Email which alerts are sent to"
+  type        = string
+  default     = "example@example.com"
 }
 
 # =============================================================================
@@ -50,21 +50,21 @@ variable "alert_email" {
 # =============================================================================
 
 variable "app_subnet_address_prefix" {
-    description = "App subnet address prefix"
-    type        = string
-    default     = "10.0.1.0/24"
+  description = "App subnet address prefix"
+  type        = string
+  default     = "10.0.1.0/24"
 }
 
 variable "data_subnet_address_prefix" {
-    description = "Data subnet address prefix"
-    type        = string
-    default     = "10.0.2.0/24"
+  description = "Data subnet address prefix"
+  type        = string
+  default     = "10.0.2.0/24"
 }
 
 variable "management_subnet_address_prefix" {
-    description = "Management address prefix"
-    type        = string
-    default     = "10.0.3.0/24"
+  description = "Management address prefix"
+  type        = string
+  default     = "10.0.3.0/24"
 }
 
 # =============================================================================
@@ -95,7 +95,7 @@ variable "secret_value" {
 # =============================================================================
 
 variable "storage_account_log_name" {
-    description = "Name of log storage accoount"
-    type        = string
-    # Name stored locally
+  description = "Name of log storage accoount"
+  type        = string
+  # Name stored locally
 }

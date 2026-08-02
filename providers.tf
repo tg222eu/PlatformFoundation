@@ -11,9 +11,9 @@ provider "azurerm" {
       recover_soft_deleted_secrets          = false
     }
   }
-  
+
 }
 
 provider "azuread" {
-  
+
 }
