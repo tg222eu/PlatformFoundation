@@ -8,6 +8,9 @@ terraform {
     storage_account_name = "stterraformstate9482"
     container_name       = "tfstate"
     key                  = "platform-foundation.tfstate"
+
+    use_azuread_auth     = true
+    use_oidc             = true
   }
 }
 
