@@ -78,7 +78,7 @@ resource "azurerm_key_vault" "main" {
 
 resource "azurerm_key_vault_secret" "main" {
   name         = "secret"
-  value        = var.secret_value # Have no purpose yet, just for testing
+  value        = var.key_secret_value # Have no purpose yet, just for testing
   key_vault_id = azurerm_key_vault.main.id
   tags         = local.common_tags
 
