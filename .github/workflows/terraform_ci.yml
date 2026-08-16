@@ -37,4 +37,4 @@ jobs:
           run: terraform validate
 
         - name: Terraform Plan
-          run: terraform plan -no-color # -no-color disables ANSI codes and makes output more readable
+          run: terraform plan -no-color -lock=false # -no-color disables ANSI codes and makes output more readable
