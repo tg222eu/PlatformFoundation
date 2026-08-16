@@ -83,7 +83,7 @@ variable "key_vault_name" {
   # Key vault value stored locally
 }
 
-variable "secret_value" {
+variable "key_secret_value" {
   description = "Key name"
   type        = string
   sensitive   = true
