@@ -14,7 +14,9 @@ terraform {
   }
 }
 
+# Only used for initial setup of the project
 data "azurerm_client_config" "current_user" {}
+
 data "azuread_service_principal" "github_oidc" { client_id = "c55e44ef-dddd-4bae-ba0f-edf101ba2363" }
 
 resource "azurerm_resource_group" "main" {
