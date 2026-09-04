@@ -5,16 +5,14 @@
 ### Current Status
 This is an early-stage project I started recently to practice Infrastructure as Code concepts.
 
-### What exists so far
-- Remote state backend (Azure Blob Storage)
-- Resource Group with tagging strategy
-- Hub VNet with three segmented subnets (app, data, management)
-- Network Security Groups associated to each subnet
-- Variable-driven configuration with consistent Azure naming convention
+README FILE IN-PROGRESS
 
-### Goals
-- Build foundational Azure resources using Terraform (networking, Key Vault, logging, storage)
-- Practice proper project structure, state management and CI/CD
-- Learn operational patterns for platform foundations
+Bootstrap OICD
 
-> Work in progress – more implementation coming soon.
+For CI/CD to work we have to solve the chicken-and-egg problem: GitHub Actions cannot deploy until an Azure identity already exists and already has permission, but Terraform cannot create that identity until Actions can deploy.
+
+In an enterprise setup this first layer usually lives in a dedicated repo, for example azure-oidc-bootstrap. That repo would create the App Registration, federated credentials, state storage, and the first RBAC assignments. After that, every real project repo only uses the identity.
+
+In this lab I did the same job in the portal instead. Functionally it is the same bootstrap. (Dedicated repo later as a mini project?)
+
+I created App registration github-oidc-lab
