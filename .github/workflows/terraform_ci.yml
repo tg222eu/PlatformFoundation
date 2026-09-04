@@ -16,9 +16,9 @@ jobs:
         ARM_USE_OIDC: true
         ARM_USE_AZUREAD: true
         TF_VAR_key_secret_value: ${{ vars.KEY_SECRET_VALUE }}
-        TF_VAR_key_vault_name: "KEY_VAULT_NAME"
-        TF_VAR_my_public_ip: "MY_PUBLIC_IP"
-        TF_VAR_storage_account_log_name: "STORAGE_ACCOUNT_LOG_NAME"
+        TF_VAR_key_vault_name: "kv-platform-dev-testlab"
+        TF_VAR_my_public_ip: ${{ secrets.MY_PUBLIC_IP }}
+        TF_VAR_storage_account_log_name: "stplatformlogsdev"
       steps:
         - name: Checkout
           uses: actions/checkout@v4
